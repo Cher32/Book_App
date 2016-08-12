@@ -17,8 +17,10 @@ class CartController < ApplicationController
 			else
 				cart[id] = 1
 			end
-		redirect_to :action => :index
-	end  #end add method
+			session[:last_product_page] = request.env['HTTP_REFERER'] || products_url
+			redirect_to :action => :index
+  	end  #end add method
+
 
 	def clearCart
 		session[:cart] = nil

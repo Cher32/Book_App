@@ -35,5 +35,9 @@
 		</h3>
 				
 	</div>	
+	<% if session[:last_product_page] %>
+  <%= link_to "Continue Shopping", session[:last_product_page] %> |
+<% end %>
+
 			
 </div>
